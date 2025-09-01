@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Canciones para Mi Princesa</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos_v3.css">
+</head>
+<body>
+    <!-- Partículas de fondo -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header principal -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="main-title">
+                <i class="fas fa-heart pulse"></i>
+                Canciones para Mi Princesa
+                <i class="fas fa-heart pulse"></i>
+            </h1>
+            <p class="subtitle">Una colección de melodías que cuentan nuestra historia de amor</p>
+            
+            <!-- Contadores -->
+            <div class="counters-container">
+                <div class="counter-card">
+                    <i class="fas fa-calendar-heart"></i>
+                    <h3>Tiempo Juntos</h3>
+                    <div id="contador" class="counter-display">Cargando...</div>
+                </div>
+                <div class="counter-card">
+                    <i class="fas fa-ring"></i>
+                    <h3>Próximo Aniversario</h3>
+                    <div id="cuenta-regresiva" class="counter-display">Cargando...</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <main class="main-container">
+        <!-- Galería de fotos -->
+        <section class="gallery-section">
+            <div class="section-header">
+                <h2><i class="fas fa-camera-retro"></i> Nuestros Momentos Especiales</h2>
+                <p>Cada foto cuenta una historia, cada sonrisa un recuerdo inolvidable</p>
+            </div>
+            
+            <div class="photo-gallery" id="photo-gallery">
+                <!-- Las fotos se generarán dinámicamente -->
+            </div>
+        </section>
+
+        <!-- Lista de canciones -->
+        <section class="songs-section">
+            <div class="section-header">
+                <h2><i class="fas fa-music"></i> Nuestra Playlist del Amor</h2>
+                <p>Cada canción tiene su momento especial en nuestra historia</p>
+            </div>
+            
+            <div class="songs-grid" id="songs-grid">
+                <!-- Las canciones se generarán dinámicamente -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Reproductor flotante -->
+    <div class="floating-player" id="floating-player">
+        <div class="player-content">
+            <button class="close-player" id="close-player">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="player-visual">
+                <div class="album-art-container">
+                    <img src="https://via.placeholder.com/300x300/ff69b4/ffffff?text=♪" alt="Album Art" id="player-album-art" class="player-album-art">
+                    <div class="vinyl-effect"></div>
+                    <div class="play-indicator">
+                        <i class="fas fa-music"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="player-info">
+                <h3 id="player-title">Título de la Canción</h3>
+                <p id="player-artist">Artista</p>
+                <p id="player-date">Fecha</p>
+                <p id="player-message" class="love-message">Mensaje de amor...</p>
+            </div>
+            
+            <div class="player-controls">
+                <audio id="player-audio" controls></audio>
+            </div>
+            
+            <!-- Poema dinámico -->
+            <div class="poem-container">
+                <p id="poema" class="poem-text">🎵 Selecciona una canción para ver un mensaje especial 💖</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Visor de fotos -->
+    <div class="photo-viewer" id="photo-viewer">
+        <div class="photo-viewer-content">
+            <button class="close-viewer" id="close-viewer">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="" alt="Foto ampliada" id="viewer-image" class="viewer-image">
+            <div class="photo-info">
+                <h3 id="viewer-title">Título de la foto</h3>
+                <p id="viewer-description">Descripción del momento</p>
+            </div>
+            <div class="photo-navigation">
+                <button class="nav-btn" id="prev-photo"><i class="fas fa-chevron-left"></i></button>
+                <button class="nav-btn" id="next-photo"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay de fondo -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script_v3.js"></script>
+</body>
+</html>
+
