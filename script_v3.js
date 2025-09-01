@@ -420,7 +420,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let diferencia = ahora - fechaInicio;
 
         if (diferencia < 0) {
-            document.getElementById('contador').textContent = "0 años, 0 meses, 0 días, 0 horas, 0 minutos, 0 segundos ❤️";
+            document.getElementById('contador').textContent = "0 años, 0 meses, 0 semanas, 0 días, 0 horas, 0 minutos, 0 segundos ❤️";
             return;
         }
 
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
         document.getElementById('contador').textContent = 
-            `${años} años, ${meses} meses, ${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
+            `${años} años, ${meses} meses, ${semanas} semanas, ${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
     }
 
     // Cuenta regresiva para el aniversario de 2 años
@@ -444,10 +444,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const diferencia = fechaObjetivo - ahora;
         
         if (diferencia > 0) {
-            let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-            let horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
-            let segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+              let segundos = Math.floor(diferencia / 1000) % 60;
+    let minutos = Math.floor(diferencia / (1000 * 60)) % 60;
+    let horas = Math.floor(diferencia / (1000 * 60 * 60)) % 24;
+    let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) % 7; 
+    let semanas = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 7)) % 4; 
+    let meses = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 30.44)) % 12;
+    let años = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
 
             document.getElementById('cuenta-regresiva').textContent = 
                 `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
