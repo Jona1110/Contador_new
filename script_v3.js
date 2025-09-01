@@ -424,12 +424,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        let segundos = Math.floor(diferencia / 1000) % 60;
-        let minutos = Math.floor(diferencia / (1000 * 60)) % 60;
-        let horas = Math.floor(diferencia / (1000 * 60 * 60)) % 24;
-        let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) % 30;
-        let meses = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 30.44)) % 12;
-        let años = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
+     let segundos = Math.floor(diferencia / 1000) % 60;
+    let minutos = Math.floor(diferencia / (1000 * 60)) % 60;
+    let horas = Math.floor(diferencia / (1000 * 60 * 60)) % 24;
+    let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) % 7; 
+    let semanas = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 7)) % 4; 
+    let meses = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 30.44)) % 12;
+    let años = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
+
 
         document.getElementById('contador').textContent = 
             `${años} años, ${meses} meses, ${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
