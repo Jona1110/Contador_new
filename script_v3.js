@@ -453,7 +453,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let años = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
 
             document.getElementById('cuenta-regresiva').textContent = 
-                `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
+                `${semanas} semanas, ${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
         } else {
             document.getElementById('cuenta-regresiva').textContent = 
                 "¡Ya cumplimos 2 años juntos! 🎉❤️";
