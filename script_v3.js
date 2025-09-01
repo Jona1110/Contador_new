@@ -444,16 +444,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const diferencia = fechaObjetivo - ahora;
         
         if (diferencia > 0) {
-              let segundos = Math.floor(diferencia / 1000) % 60;
-    let minutos = Math.floor(diferencia / (1000 * 60)) % 60;
-    let horas = Math.floor(diferencia / (1000 * 60 * 60)) % 24;
-    let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24)) % 7; 
-    let semanas = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 7)) % 4; 
-    let meses = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 30.44)) % 12;
-    let años = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
+            let dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+            let horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+            let segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
 
             document.getElementById('cuenta-regresiva').textContent = 
-                `${semanas} semanas, ${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
+                `${dias} días, ${horas} horas, ${minutos} minutos, ${segundos} segundos ❤️`;
         } else {
             document.getElementById('cuenta-regresiva').textContent = 
                 "¡Ya cumplimos 2 años juntos! 🎉❤️";
